@@ -1,0 +1,104 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 5,
+  "summary": "24/7 AI coach and voice agent application",
+  "architectural_notes": [],
+  "known_issues": [],
+  "isFixRequest": false,
+  "existing_features": [
+    {
+      "id": "feature-implement-voice-recording-and-playback-functionality-with-microphone-access-for-voice-based-coaching-interactions",
+      "title": "Implement voice recording and playback functionality with microphone access for voice-based coaching interactions",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-replace-the-featuredcourses-and-featuredtools-sections-with-a-coaching-dashboard-showing-recent-sessions-active-goals-and-quick-start-coaching-options",
+      "title": "Replace the FeaturedCourses and FeaturedTools sections with a coaching dashboard showing recent sessions, active goals, and quick-start coaching options",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-real-time-coaching-interface-replacing-the-course-detail-page-with-text-chat-area-voice-controls-and-ai-coach-response-display",
+      "title": "Create a real-time coaching interface replacing the course detail page, with text chat area, voice controls, and AI coach response display",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-24-7-availability-indicator-and-session-initiation-flow-that-allows-users-to-start-coaching-at-any-time",
+      "title": "Implement 24/7 availability indicator and session initiation flow that allows users to start coaching at any time",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-app-branding-header-and-navigation-to-reflect-ai-coach-identity-removing-course-and-tool-references",
+      "title": "Update app branding, header, and navigation to reflect AI Coach identity, removing course and tool references",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-establish-a-creative-visual-theme-for-an-ai-coaching-and-voice-agent-application-with-cohesive-colors-typography-and-layout-that-conveys-trust-accessibility-and-modern-ai-capabilities",
+      "title": "Establish a creative visual theme for an AI coaching and voice agent application with cohesive colors, typography, and layout that conveys trust, accessibility, and modern AI capabilities",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-large-prominent-start-coaching-session-button-to-the-coachingdashboard-component-that-appears-above-or-alongside-the-existing-quick-start-coaching-topic-cards-serving-as-a-primary-call-to-action-for-authenticated-users",
+      "title": "Add a large, prominent 'Start Coaching Session' button to the CoachingDashboard component that appears above or alongside the existing quick-start coaching topic cards, serving as a primary call-to-action for authenticated users",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "AI coaching functionality",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Voice agent capability",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "24/7 availability system",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Replace course and tool management system with AI coaching session management including session history, coaching topics, and user goals tracking",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-5",
+      "summary": "Add prominent start button to complement existing quick-start coaching options as primary call-to-action",
+      "reqIds": [],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "24x7 My AI Coach",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

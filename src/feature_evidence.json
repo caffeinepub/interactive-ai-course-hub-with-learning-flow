@@ -1,0 +1,24 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-add-a-large-prominent-start-coaching-session-button-to-the-coachingdashboard-component-that-appears-above-or-alongside-the-existing-quick-start-coaching-topic-cards-serving-as-a-primary-call-to-action-for-authenticated-users",
+      "featureTitle": "Add a large, prominent 'Start Coaching Session' button to the CoachingDashboard component that appears above or alongside the existing quick-start coaching topic cards, serving as a primary call-to-action for authenticated users",
+      "files": [
+        "frontend/src/components/CoachingDashboard.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0",
+        "authorization@4.0.0"
+      ],
+      "testIds": [
+        "REQ-8"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

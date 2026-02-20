@@ -1,0 +1,43 @@
+{
+  "kind": "build_request",
+  "title": "Add prominent start button as primary call-to-action",
+  "projectName": "24x7 My AI Coach",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-8",
+      "text": "Add a large, prominent 'Start Coaching Session' button to the CoachingDashboard component that appears above or alongside the existing quick-start coaching topic cards, serving as a primary call-to-action for authenticated users",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-last"
+        ],
+        "quotes": [
+          "add a prominent start button to complement your existing quick-start coaching options"
+        ]
+      },
+      "acceptanceCriteria": [
+        "A visually prominent button labeled 'Start Coaching Session' or similar is visible on the coaching dashboard",
+        "The button appears in a strategic position (e.g., hero section, above quick-start cards) to draw user attention",
+        "Clicking the button initiates a new coaching session flow (e.g., opens topic selection or starts a general coaching session)",
+        "The button complements rather than replaces the existing quick-start coaching topic cards",
+        "Button styling aligns with the existing design system (theme colors, animations, accessibility)"
+      ]
+    }
+  ],
+  "constraints": [
+    "Do not remove or replace the existing quick-start coaching topic cards in the CoachingDashboard",
+    "Maintain consistency with the existing OKLCH-based color system and theme variables",
+    "Preserve the existing authentication flow and backend actor usage patterns"
+  ],
+  "nonGoals": [
+    "Changing the backend API or data models",
+    "Modifying the coaching session page interface",
+    "Altering the voice recording or playback functionality",
+    "Redesigning the overall dashboard layout"
+  ],
+  "imageRequirements": {
+    "required": [],
+    "edits": []
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Add prominent start button as primary call-to-action",
+  "requirements": [
+    {
+      "id": "REQ-8",
+      "summary": "Add a large, prominent 'Start Coaching Session' button to the CoachingDashboard component that appears above the existing quick-start coaching topic cards, serving as a primary call-to-action for authenticated users",
+      "acceptanceCriteria": [
+        "A visually prominent button labeled 'Start Coaching Session' or similar is visible on the coaching dashboard",
+        "The button appears in a strategic position (e.g., hero section, above quick-start cards) to draw user attention",
+        "Clicking the button initiates a new coaching session flow (e.g., opens topic selection or starts a general coaching session)",
+        "The button complements rather than replaces the existing quick-start coaching topic cards",
+        "Button styling aligns with the existing design system (theme colors, animations, accessibility)"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/CoachingDashboard.tsx",
+          "operation": "modify",
+          "description": "Add a prominent 'Start Coaching Session' button in a hero section above the existing quick-start coaching topic cards. The button should use the existing OKLCH-based color system (theme colors from index.css), include appropriate hover/focus states, and be visually distinct from the topic cards. Position it prominently at the top of the dashboard content area. When clicked, the button should navigate to a general coaching session or present topic selection. Ensure the button complements the existing quick-start cards and maintains the current dashboard layout structure. Use shadcn/ui Button component for consistency with the existing design system."
+        }
+      ]
+    }
+  ]
+}

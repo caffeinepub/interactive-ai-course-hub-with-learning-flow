@@ -1,2 +1,3 @@
-# interactive-ai-course-hub-with-learning-flow
-Exported from Caffeine project: Interactive AI Course Hub with Learning Flow
+## 
+
+To run app build and run docker image: `docker build -t app . docker run -it --network host app`
