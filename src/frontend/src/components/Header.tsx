@@ -1,4 +1,4 @@
-import { MessageCircle, Moon, Sun, Home } from 'lucide-react';
+import { MessageCircle, Moon, Sun, Home, LogIn } from 'lucide-react';
 import { Button } from './ui/button';
 import { useTheme } from 'next-themes';
 import { useNavigate, useRouterState } from '@tanstack/react-router';
@@ -66,6 +66,29 @@ export function Header() {
               Dashboard
             </Button>
           )}
+          
+          {!isAuthenticated && (
+            <Button
+              onClick={handleAuth}
+              disabled={isLoggingIn}
+              size="default"
+              className="gap-2 bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-primary-foreground font-semibold shadow-lg hover:shadow-xl transition-all"
+            >
+              <LogIn className="h-4 w-4" />
+              {isLoggingIn ? 'Logging in...' : 'Sign In'}
+            </Button>
+          )}
+          
+          {isAuthenticated && (
+            <Button
+              onClick={handleAuth}
+              variant="outline"
+              size="sm"
+            >
+              Logout
+            </Button>
+          )}
+          
           <Button
             variant="ghost"
             size="icon"
@@ -75,14 +98,6 @@ export function Header() {
             <Sun className="h-5 w-5 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
             <Moon className="absolute h-5 w-5 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
             <span className="sr-only">Toggle theme</span>
-          </Button>
-          <Button
-            onClick={handleAuth}
-            disabled={isLoggingIn}
-            variant={isAuthenticated ? 'outline' : 'default'}
-            size="sm"
-          >
-            {isLoggingIn ? 'Logging in...' : isAuthenticated ? 'Logout' : 'Login'}
           </Button>
         </div>
       </div>

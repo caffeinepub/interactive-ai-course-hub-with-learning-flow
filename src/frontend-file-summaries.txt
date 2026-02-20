@@ -1,7 +1,7 @@
 {
   "frontend/src/App.tsx": "Main app component with routing for home page and coaching session pages, wrapped with ThemeProvider and layout containing Header, Footer, and Toaster.",
   "frontend/src/hooks/useQueries.ts": "React Query hooks for coaching functionality including availability, topics, session history, goals management, and session start/add mutations with proper cache invalidation.",
-  "frontend/src/components/Header.tsx": "Header with AI Coach Voice branding, 24/7 availability indicator, navigation controls, theme toggle, and login/logout functionality.",
+  "frontend/src/components/Header.tsx": "Header with AI Coach Voice branding, 24/7 availability indicator, navigation controls, theme toggle, and prominent gradient-styled login button with icon for unauthenticated users that conditionally shows logout button when authenticated.",
   "frontend/src/components/FeaturedCourses.tsx": "Featured courses section with tabs for filtering by difficulty level (All, Beginner, Intermediate, Advanced) and displays course cards in a responsive grid.",
   "frontend/src/components/CourseCard.tsx": "Individual course card component displaying course title, description, difficulty badge with color coding, and a \"Start Learning\" button that navigates to the detailed course page using React Router.",
   "frontend/src/components/FeaturedTools.tsx": "Featured AI tools and projects section that displays interactive demo cards in a responsive grid layout with loading and error states.",
@@ -14,7 +14,7 @@
   "frontend/src/hooks/useVoiceRecording.ts": "Custom hook managing voice recording state using MediaRecorder API with microphone permissions, recording controls, audio playback, and duration tracking.",
   "frontend/src/components/AvailabilityIndicator.tsx": "Badge component displaying 24/7 availability status with animated pulsing indicator.",
   "frontend/src/components/VoiceRecorder.tsx": "Voice recording component with microphone button, recording state visualization, duration timer, and playback controls.",
-  "frontend/src/components/CoachingDashboard.tsx": "Main dashboard with prominent hero-style \"Start Coaching Session\" button at the top, followed by quick-start coaching topic cards and recent session history with loading states.",
+  "frontend/src/components/CoachingDashboard.tsx": "Main dashboard with an extra-large, prominently styled \"Start Coaching Session\" button positioned at the very top with responsive sizing (text-lg to text-2xl), enhanced shadows, gradient effects, and hover animations, followed by hero section, quick-start coaching topic cards, and recent session history with loading states.",
   "frontend/src/components/QuickStartCard.tsx": "Card component for initiating new coaching sessions on specific topics with loading state during session start.",
   "frontend/src/components/SessionCard.tsx": "Card displaying individual coaching session summary with icon and session text.",
   "frontend/src/components/GoalCard.tsx": "Card showing individual goal with progress bar, topic, and remove button functionality.",

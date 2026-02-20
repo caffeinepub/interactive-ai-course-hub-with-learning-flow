@@ -2,10 +2,10 @@
   "kind": "feature_evidence_report",
   "features": [
     {
-      "featureId": "feature-add-a-large-prominent-start-coaching-session-button-to-the-coachingdashboard-component-that-appears-above-or-alongside-the-existing-quick-start-coaching-topic-cards-serving-as-a-primary-call-to-action-for-authenticated-users",
-      "featureTitle": "Add a large, prominent 'Start Coaching Session' button to the CoachingDashboard component that appears above or alongside the existing quick-start coaching topic cards, serving as a primary call-to-action for authenticated users",
+      "featureId": "feature-add-a-prominent-login-or-sign-in-button-to-the-header-component-that-appears-in-the-top-right-corner-for-unauthenticated-users-positioned-before-the-theme-toggle-button",
+      "featureTitle": "Add a prominent 'Login' or 'Sign In' button to the Header component that appears in the top-right corner for unauthenticated users, positioned before the theme toggle button",
       "files": [
-        "frontend/src/components/CoachingDashboard.tsx"
+        "frontend/src/components/Header.tsx"
       ],
       "components": [
         "core-infrastructure@1.0.2",
@@ -16,7 +16,45 @@
         "authorization@4.0.0"
       ],
       "testIds": [
-        "REQ-8"
+        "REQ-12"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-connect-the-login-button-to-trigger-internet-identity-authentication-using-the-existing-useinternetidentity-hook-s-login-function-when-clicked",
+      "featureTitle": "Connect the login button to trigger Internet Identity authentication using the existing useInternetIdentity hook's login function when clicked",
+      "files": [
+        "frontend/src/components/Header.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0",
+        "authorization@4.0.0"
+      ],
+      "testIds": [
+        "REQ-13"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-hide-the-login-button-and-show-the-existing-logout-profile-controls-in-the-header-component-after-successful-authentication",
+      "featureTitle": "Hide the login button and show the existing logout/profile controls in the Header component after successful authentication",
+      "files": [
+        "frontend/src/components/Header.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0",
+        "authorization@4.0.0"
+      ],
+      "testIds": [
+        "REQ-14"
       ],
       "confidence": "high"
     }

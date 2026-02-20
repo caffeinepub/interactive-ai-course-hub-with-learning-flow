@@ -1,40 +1,77 @@
 {
   "kind": "build_request",
-  "title": "Add prominent start button as primary call-to-action",
-  "projectName": "24x7 My AI Coach",
-  "priority": "normal",
+  "title": "Add login button to header for unauthenticated users",
+  "projectName": "AI Coach Voice",
+  "priority": "high",
   "requirements": [
     {
-      "id": "REQ-8",
-      "text": "Add a large, prominent 'Start Coaching Session' button to the CoachingDashboard component that appears above or alongside the existing quick-start coaching topic cards, serving as a primary call-to-action for authenticated users",
+      "id": "REQ-12",
+      "text": "Add a prominent 'Login' or 'Sign In' button to the Header component that appears in the top-right corner for unauthenticated users, positioned before the theme toggle button",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-last"
+          "msg-conversation-end"
         ],
         "quotes": [
-          "add a prominent start button to complement your existing quick-start coaching options"
+          "add a login button to the app's header/navigation",
+          "Appears in the top-right corner of the header for unauthenticated users"
         ]
       },
       "acceptanceCriteria": [
-        "A visually prominent button labeled 'Start Coaching Session' or similar is visible on the coaching dashboard",
-        "The button appears in a strategic position (e.g., hero section, above quick-start cards) to draw user attention",
-        "Clicking the button initiates a new coaching session flow (e.g., opens topic selection or starts a general coaching session)",
-        "The button complements rather than replaces the existing quick-start coaching topic cards",
-        "Button styling aligns with the existing design system (theme colors, animations, accessibility)"
+        "Login button is visible in the header when user is not authenticated",
+        "Button is positioned in the top-right area of the header navigation",
+        "Button has clear, prominent styling that matches the app's visual theme",
+        "Button is responsive and visible on mobile, tablet, and desktop screen sizes"
+      ]
+    },
+    {
+      "id": "REQ-13",
+      "text": "Connect the login button to trigger Internet Identity authentication using the existing useInternetIdentity hook's login function when clicked",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-conversation-end"
+        ],
+        "quotes": [
+          "Triggers Internet Identity authentication when clicked"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Clicking the login button initiates the Internet Identity authentication flow",
+        "Authentication uses the existing useInternetIdentity context and login method",
+        "Button shows loading state during authentication process"
+      ]
+    },
+    {
+      "id": "REQ-14",
+      "text": "Hide the login button and show the existing logout/profile controls in the Header component after successful authentication",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-conversation-end"
+        ],
+        "quotes": [
+          "Replaces itself with user profile/logout controls after successful login"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Login button is hidden when user is authenticated",
+        "Existing logout button and user controls remain visible for authenticated users",
+        "Transition between login and authenticated states is smooth"
       ]
     }
   ],
   "constraints": [
-    "Do not remove or replace the existing quick-start coaching topic cards in the CoachingDashboard",
-    "Maintain consistency with the existing OKLCH-based color system and theme variables",
-    "Preserve the existing authentication flow and backend actor usage patterns"
+    "Use the existing useInternetIdentity hook and authentication system",
+    "Do not modify frontend/src/hooks/useInternetIdentity.ts",
+    "Maintain the current Header component structure and existing navigation elements",
+    "Preserve the existing theme toggle and logout functionality"
   ],
   "nonGoals": [
-    "Changing the backend API or data models",
-    "Modifying the coaching session page interface",
-    "Altering the voice recording or playback functionality",
-    "Redesigning the overall dashboard layout"
+    "Creating new authentication providers or methods beyond Internet Identity",
+    "Modifying the authentication flow or identity management logic",
+    "Adding registration or signup flows separate from Internet Identity",
+    "Implementing social login buttons (Google, Facebook, etc.)"
   ],
   "imageRequirements": {
     "required": [],

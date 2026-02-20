@@ -1,10 +1,13 @@
 {
   "schemaVersion": "1.0.0",
-  "projectStateVersion": 5,
+  "projectStateVersion": 9,
   "summary": "24/7 AI coach and voice agent application",
   "architectural_notes": [],
-  "known_issues": [],
-  "isFixRequest": false,
+  "known_issues": [
+    "Start Coaching Session button may not be sufficiently visible or prominent on the CoachingDashboard",
+    "Login button is missing from the header/navigation for unauthenticated users"
+  ],
+  "isFixRequest": true,
   "existing_features": [
     {
       "id": "feature-implement-voice-recording-and-playback-functionality-with-microphone-access-for-voice-based-coaching-interactions",
@@ -61,6 +64,54 @@
         "REQ-8"
       ],
       "version": 1
+    },
+    {
+      "id": "feature-increase-the-size-and-visual-prominence-of-the-start-coaching-session-button-in-the-coachingdashboard-component-by-making-it-extra-large-using-tailwind-s-text-xl-or-larger-font-size-and-adding-more-prominent-styling-with-stronger-colors-and-shadows",
+      "title": "Increase the size and visual prominence of the 'Start Coaching Session' button in the CoachingDashboard component by making it extra large (using Tailwind's text-xl or larger font size) and adding more prominent styling with stronger colors and shadows",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-ensure-the-start-coaching-session-button-is-positioned-at-the-very-top-of-the-coachingdashboard-content-area-above-all-other-elements-including-the-quick-start-topic-cards-with-generous-spacing-padding-margin-around-it-to-create-visual-separation",
+      "title": "Ensure the 'Start Coaching Session' button is positioned at the very top of the CoachingDashboard content area, above all other elements including the quick-start topic cards, with generous spacing (padding/margin) around it to create visual separation",
+      "reqIds": [
+        "REQ-10"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-verify-the-start-coaching-session-button-is-fully-responsive-and-visible-on-all-screen-sizes-mobile-tablet-desktop-with-appropriate-sizing-that-maintains-prominence-on-smaller-screens",
+      "title": "Verify the 'Start Coaching Session' button is fully responsive and visible on all screen sizes (mobile, tablet, desktop) with appropriate sizing that maintains prominence on smaller screens",
+      "reqIds": [
+        "REQ-11"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-prominent-login-or-sign-in-button-to-the-header-component-that-appears-in-the-top-right-corner-for-unauthenticated-users-positioned-before-the-theme-toggle-button",
+      "title": "Add a prominent 'Login' or 'Sign In' button to the Header component that appears in the top-right corner for unauthenticated users, positioned before the theme toggle button",
+      "reqIds": [
+        "REQ-12"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-connect-the-login-button-to-trigger-internet-identity-authentication-using-the-existing-useinternetidentity-hook-s-login-function-when-clicked",
+      "title": "Connect the login button to trigger Internet Identity authentication using the existing useInternetIdentity hook's login function when clicked",
+      "reqIds": [
+        "REQ-13"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-hide-the-login-button-and-show-the-existing-logout-profile-controls-in-the-header-component-after-successful-authentication",
+      "title": "Hide the login button and show the existing logout/profile controls in the Header component after successful authentication",
+      "reqIds": [
+        "REQ-14"
+      ],
+      "version": 1
     }
   ],
   "new_feature_requests": [
@@ -93,6 +144,18 @@
     {
       "id": "AR-5",
       "summary": "Add prominent start button to complement existing quick-start coaching options as primary call-to-action",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-6",
+      "summary": "Review and enhance Start Coaching Session button placement and visibility in the CoachingDashboard component to ensure it is prominent and easily discoverable",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-7",
+      "summary": "Add a prominent login button to the app's header/navigation for unauthenticated users that triggers Internet Identity authentication",
       "reqIds": [],
       "status": "pending"
     }
