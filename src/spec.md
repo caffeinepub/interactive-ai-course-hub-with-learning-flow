@@ -1,13 +1,9 @@
 # Specification
 
 ## Summary
-**Goal:** Add a login button to the header for unauthenticated users that triggers Internet Identity authentication.
+**Goal:** Redeploy the application to production environment.
 
 **Planned changes:**
-- Add a "Login" or "Sign In" button to the Header component in the top-right corner before the theme toggle
-- Connect the button to the existing useInternetIdentity hook's login function
-- Show the login button only when the user is not authenticated
-- Hide the login button and display existing logout/profile controls after successful authentication
-- Ensure the button is responsive across mobile, tablet, and desktop screen sizes
+- Redeploy the current application state to production
 
-**User-visible outcome:** Unauthenticated users will see a prominent login button in the header that, when clicked, initiates the Internet Identity authentication flow. After successful login, the button is replaced with the existing user profile and logout controls.
+**User-visible outcome:** The application is live and accessible in the production environment with the latest updates.

@@ -1,11 +1,11 @@
 {
   "schemaVersion": "1.0.0",
-  "projectStateVersion": 9,
+  "projectStateVersion": 13,
   "summary": "24/7 AI coach and voice agent application",
   "architectural_notes": [],
   "known_issues": [
-    "Start Coaching Session button may not be sufficiently visible or prominent on the CoachingDashboard",
-    "Login button is missing from the header/navigation for unauthenticated users"
+    "Login button is missing from the header/navigation for unauthenticated users",
+    "Start Coaching Session button is not responding to clicks"
   ],
   "isFixRequest": true,
   "existing_features": [
@@ -110,6 +110,30 @@
       "title": "Hide the login button and show the existing logout/profile controls in the Header component after successful authentication",
       "reqIds": [
         "REQ-14"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-debug-and-fix-the-start-coaching-session-button-in-the-coachingdashboard-component-to-ensure-click-events-are-properly-handled-and-navigation-to-the-coaching-session-is-triggered",
+      "title": "Debug and fix the 'Start Coaching Session' button in the CoachingDashboard component to ensure click events are properly handled and navigation to the coaching session is triggered",
+      "reqIds": [
+        "REQ-15"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-verify-that-no-overlapping-elements-or-z-index-issues-are-preventing-the-start-coaching-session-button-from-receiving-click-events-in-the-coachingdashboard-component",
+      "title": "Verify that no overlapping elements or z-index issues are preventing the 'Start Coaching Session' button from receiving click events in the CoachingDashboard component",
+      "reqIds": [
+        "REQ-16"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-ensure-the-onclick-handler-for-the-start-coaching-session-button-is-correctly-implemented-and-not-blocked-by-loading-states-authentication-checks-or-conditional-rendering-logic",
+      "title": "Ensure the onClick handler for the 'Start Coaching Session' button is correctly implemented and not blocked by loading states, authentication checks, or conditional rendering logic",
+      "reqIds": [
+        "REQ-17"
       ],
       "version": 1
     }

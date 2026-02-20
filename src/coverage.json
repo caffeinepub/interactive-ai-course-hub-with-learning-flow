@@ -1,56 +1,21 @@
 {
   "kind": "coverage_report",
   "version": "1.0",
-  "generatedAt": "2026-02-20T20:19:17.787Z",
+  "generatedAt": "2026-02-20T20:40:29.853Z",
   "sources": {
     "buildRequest": true,
     "implementationPlan": true
   },
   "requirements": {
-    "total": 3,
-    "implemented": 3,
-    "items": [
-      {
-        "id": "REQ-12",
-        "summary": "Add a prominent 'Login' or 'Sign In' button to the Header component that appears in the top-right corner for unauthenticated users, positioned before the theme toggle button",
-        "status": "implemented",
-        "plannedFiles": [
-          "frontend/src/components/Header.tsx"
-        ],
-        "matchedFiles": [
-          "frontend/src/components/Header.tsx"
-        ]
-      },
-      {
-        "id": "REQ-13",
-        "summary": "Connect the login button to trigger Internet Identity authentication using the existing useInternetIdentity hook's login function when clicked",
-        "status": "implemented",
-        "plannedFiles": [
-          "frontend/src/components/Header.tsx"
-        ],
-        "matchedFiles": [
-          "frontend/src/components/Header.tsx"
-        ]
-      },
-      {
-        "id": "REQ-14",
-        "summary": "Hide the login button and show the existing logout/profile controls in the Header component after successful authentication",
-        "status": "implemented",
-        "plannedFiles": [
-          "frontend/src/components/Header.tsx"
-        ],
-        "matchedFiles": [
-          "frontend/src/components/Header.tsx"
-        ]
-      }
-    ]
+    "total": 0,
+    "implemented": 0,
+    "items": []
   },
   "changedFiles": [
+    "backend/main.mo",
     "build-request.json",
     "feature_evidence.json",
-    "frontend-file-summaries.txt",
     "frontend-implementation-plan.json",
-    "frontend/src/components/Header.tsx",
     "project_state.json",
     "scratch/component-selection.json",
     "spec.md",

@@ -16,18 +16,46 @@ export function CoachingDashboard() {
   const { identity } = useInternetIdentity();
 
   const handleStartCoaching = () => {
-    if (!identity || !topics || topics.length === 0) {
+    console.log('Start button clicked!');
+    console.log('Identity:', identity?.getPrincipal().toString());
+    console.log('Topics:', topics);
+    console.log('Topics loading:', topicsLoading);
+    
+    if (!identity) {
+      console.log('No identity - user not logged in');
+      return;
+    }
+    
+    if (!topics || topics.length === 0) {
+      console.log('No topics available');
       return;
     }
     
     // Start with the first available topic
     const firstTopic = topics[0];
+    console.log('Starting session with topic:', firstTopic);
+    
     startSession(firstTopic, {
       onSuccess: () => {
+        console.log('Session started successfully, navigating...');
         navigate({ to: '/session/$topic', params: { topic: firstTopic } });
+      },
+      onError: (error) => {
+        console.error('Failed to start session:', error);
       },
     });
   };
+
+  const isButtonDisabled = isPending || !identity || topicsLoading || !topics || topics.length === 0;
+  
+  console.log('Button disabled state:', {
+    isPending,
+    hasIdentity: !!identity,
+    topicsLoading,
+    hasTopics: !!topics,
+    topicsLength: topics?.length,
+    isDisabled: isButtonDisabled
+  });
 
   return (
     <div className="container py-8 space-y-12">
@@ -35,9 +63,9 @@ export function CoachingDashboard() {
       <section className="flex justify-center pt-4 pb-8">
         <Button
           onClick={handleStartCoaching}
-          disabled={isPending || !identity || topicsLoading || !topics || topics.length === 0}
+          disabled={isButtonDisabled}
           size="lg"
-          className="w-full max-w-md text-lg md:text-xl lg:text-2xl px-8 md:px-10 lg:px-12 py-6 md:py-7 lg:py-8 h-auto shadow-2xl hover:shadow-[0_20px_50px_rgba(8,_112,_184,_0.7)] transition-all duration-300 transform hover:scale-105 bg-gradient-to-r from-primary via-primary to-accent hover:from-primary/90 hover:via-accent hover:to-primary/90 font-bold tracking-wide border-2 border-primary/30"
+          className="w-full max-w-md text-lg md:text-xl lg:text-2xl px-8 md:px-10 lg:px-12 py-6 md:py-7 lg:py-8 h-auto shadow-2xl hover:shadow-[0_20px_50px_rgba(8,_112,_184,_0.7)] transition-all duration-300 transform hover:scale-105 bg-gradient-to-r from-primary via-primary to-accent hover:from-primary/90 hover:via-accent hover:to-primary/90 font-bold tracking-wide border-2 border-primary/30 relative z-10"
         >
           {isPending ? (
             <>

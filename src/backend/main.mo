@@ -1,15 +1,13 @@
 import List "mo:core/List";
-import Text "mo:core/Text";
-import Runtime "mo:core/Runtime";
 import Map "mo:core/Map";
+import Text "mo:core/Text";
 import Principal "mo:core/Principal";
 import Array "mo:core/Array";
+import Iter "mo:core/Iter";
+import Runtime "mo:core/Runtime";
 import { addAll } "mo:core/List";
-
 import AccessControl "authorization/access-control";
 import MixinAuthorization "authorization/MixinAuthorization";
-
-// Specify migration logic to explicitly drop old data
 
 actor {
   // Initialize the access control system
@@ -25,9 +23,6 @@ actor {
   let userProfiles = Map.empty<Principal, UserProfile>();
 
   public query ({ caller }) func getCallerUserProfile() : async ?UserProfile {
-    if (not (AccessControl.hasPermission(accessControlState, caller, #user))) {
-      Runtime.trap("Unauthorized: Only users can view profiles");
-    };
     userProfiles.get(caller);
   };
 
@@ -54,7 +49,7 @@ actor {
   // Admin-only: Toggle system availability
   public shared ({ caller }) func toggleAvailability(status : Bool) : async () {
     if (not (AccessControl.hasPermission(accessControlState, caller, #admin))) {
-      Runtime.trap("Unauthorized: Only admins can toggle availability");
+      Runtime.trap("Unauthorized: Only admins can perform this action");
     };
     availability := status;
   };
@@ -67,12 +62,12 @@ actor {
   // Admin-only: Add coaching topics
   public shared ({ caller }) func addCoachingTopic(topic : Text) : async () {
     if (not (AccessControl.hasPermission(accessControlState, caller, #admin))) {
-      Runtime.trap("Unauthorized: Only admins can add coaching topics");
+      Runtime.trap("Unauthorized: Only admins can perform this action");
     };
     let topicsArray = coachingTopics.toArray();
     for (existingTopic in topicsArray.values()) {
       if (existingTopic == topic) {
-        Runtime.trap("Topic already exists");
+        return;
       };
     };
     coachingTopics.add(topic);
@@ -86,7 +81,7 @@ actor {
   // User-only: Set goals for the caller
   public shared ({ caller }) func setGoals(topic : Text, newGoals : [Text]) : async () {
     if (not (AccessControl.hasPermission(accessControlState, caller, #user))) {
-      Runtime.trap("Unauthorized: Only users can set goals");
+      Runtime.trap("Unauthorized: Only users can perform this action");
     };
     let goalsList = List.fromArray(newGoals);
     switch (goalsMap.get(caller)) {
@@ -101,16 +96,16 @@ actor {
     };
   };
 
-  // Query with ownership check: Users can only see their own goals
+  // Query with ownership check: Users can only see their own goals, admins can see any
   public query ({ caller }) func getGoals(user : Principal, topic : Text) : async [Text] {
     if (caller != user and not AccessControl.isAdmin(accessControlState, caller)) {
       Runtime.trap("Unauthorized: Can only view your own goals");
     };
     switch (goalsMap.get(user)) {
-      case (null) { Runtime.trap("Goals not found") };
+      case (null) { [] };
       case (?topicMap) {
         switch (topicMap.get(topic)) {
-          case (null) { Runtime.trap("Goals not found for this topic") };
+          case (null) { [] };
           case (?goals) { goals.toArray() };
         };
       };
@@ -120,7 +115,7 @@ actor {
   // User-only: Add session to caller's history
   public shared ({ caller }) func addSessionToHistory(session : Text) : async () {
     if (not (AccessControl.hasPermission(accessControlState, caller, #user))) {
-      Runtime.trap("Unauthorized: Only users can add session history");
+      Runtime.trap("Unauthorized: Only users can perform this action");
     };
     switch (sessionHistory.get(caller)) {
       case (null) {
@@ -134,7 +129,7 @@ actor {
     };
   };
 
-  // Query with ownership check: Users can only see their own history
+  // Query with ownership check: Users can only see their own history, admins can see any
   public query ({ caller }) func getSessionHistory(user : Principal) : async {
     #Sessions : [Text];
     #Empty : Bool;
@@ -156,7 +151,7 @@ actor {
     #Success : Text;
   } {
     if (not (AccessControl.hasPermission(accessControlState, caller, #user))) {
-      Runtime.trap("Unauthorized: Only users can start sessions");
+      Runtime.trap("Unauthorized: Only users can perform this action");
     };
     if (not availability) {
       return #Error("Coaching service is currently unavailable");
@@ -179,10 +174,10 @@ actor {
   // User-only: Add goals to caller's existing goals
   public shared ({ caller }) func addGoals(topic : Text, newGoals : [Text]) : async () {
     if (not (AccessControl.hasPermission(accessControlState, caller, #user))) {
-      Runtime.trap("Unauthorized: Only users can add goals");
+      Runtime.trap("Unauthorized: Only users can perform this action");
     };
     if (newGoals.size() == 0) {
-      Runtime.trap("No goals provided");
+      return;
     };
     switch (goalsMap.get(caller)) {
       case (null) {
@@ -239,7 +234,7 @@ actor {
     #Failure : Text;
   } {
     if (not (AccessControl.hasPermission(accessControlState, caller, #user))) {
-      Runtime.trap("Unauthorized: Only users can remove goals");
+      Runtime.trap("Unauthorized: Only users can perform this action");
     };
     switch (goalsMap.get(caller)) {
       case (null) { #Failure("Goal not found") };

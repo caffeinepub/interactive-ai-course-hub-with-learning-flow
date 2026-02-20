@@ -14,7 +14,7 @@
   "frontend/src/hooks/useVoiceRecording.ts": "Custom hook managing voice recording state using MediaRecorder API with microphone permissions, recording controls, audio playback, and duration tracking.",
   "frontend/src/components/AvailabilityIndicator.tsx": "Badge component displaying 24/7 availability status with animated pulsing indicator.",
   "frontend/src/components/VoiceRecorder.tsx": "Voice recording component with microphone button, recording state visualization, duration timer, and playback controls.",
-  "frontend/src/components/CoachingDashboard.tsx": "Main dashboard with an extra-large, prominently styled \"Start Coaching Session\" button positioned at the very top with responsive sizing (text-lg to text-2xl), enhanced shadows, gradient effects, and hover animations, followed by hero section, quick-start coaching topic cards, and recent session history with loading states.",
+  "frontend/src/components/CoachingDashboard.tsx": "Main dashboard with prominent \"Start Coaching Session\" button at the top with enhanced debugging console logs, followed by hero section, quick-start coaching topic cards, and recent session history with loading states and explicit z-index for button clickability.",
   "frontend/src/components/QuickStartCard.tsx": "Card component for initiating new coaching sessions on specific topics with loading state during session start.",
   "frontend/src/components/SessionCard.tsx": "Card displaying individual coaching session summary with icon and session text.",
   "frontend/src/components/GoalCard.tsx": "Card showing individual goal with progress bar, topic, and remove button functionality.",

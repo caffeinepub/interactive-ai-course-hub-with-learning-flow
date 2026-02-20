@@ -1,56 +1,6 @@
 {
   "kind": "implementation_plan",
   "version": "1.0",
-  "title": "Add login button to header for unauthenticated users",
-  "requirements": [
-    {
-      "id": "REQ-12",
-      "summary": "Add a prominent 'Login' or 'Sign In' button to the Header component that appears in the top-right corner for unauthenticated users, positioned before the theme toggle button",
-      "acceptanceCriteria": [
-        "Login button is visible in the header when user is not authenticated",
-        "Button is positioned in the top-right area of the header navigation",
-        "Button has clear, prominent styling that matches the app's visual theme",
-        "Button is responsive and visible on mobile, tablet, and desktop screen sizes"
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/src/components/Header.tsx",
-          "operation": "modify",
-          "description": "Add a Login button in the top-right section of the Header component that appears only for unauthenticated users. Position it before the existing theme toggle button. The button should use the authorization component's login flow pattern with prominent styling matching the app's theme (gradient effects, rounded corners, appropriate padding). Ensure responsive design for mobile, tablet, and desktop viewports. Use the existing useInternetIdentity hook to check authentication state (!!identity) to conditionally render the button. Verify the component's usage instructions before implementing."
-        }
-      ]
-    },
-    {
-      "id": "REQ-13",
-      "summary": "Connect the login button to trigger Internet Identity authentication using the existing useInternetIdentity hook's login function when clicked",
-      "acceptanceCriteria": [
-        "Clicking the login button initiates the Internet Identity authentication flow",
-        "Authentication uses the existing useInternetIdentity context and login method",
-        "Button shows loading state during authentication process"
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/src/components/Header.tsx",
-          "operation": "modify",
-          "description": "Wire the Login button's onClick handler to call the login() function from useInternetIdentity hook. Display a loading state based on loginStatus === 'logging-in' to show visual feedback during authentication (e.g., 'Logging in...' text or disabled state). Handle potential login errors gracefully by catching exceptions and using the authorization component's error handling pattern. Verify the component's usage instructions before implementing."
-        }
-      ]
-    },
-    {
-      "id": "REQ-14",
-      "summary": "Hide the login button and show the existing logout/profile controls in the Header component after successful authentication",
-      "acceptanceCriteria": [
-        "Login button is hidden when user is authenticated",
-        "Existing logout button and user controls remain visible for authenticated users",
-        "Transition between login and authenticated states is smooth"
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/src/components/Header.tsx",
-          "operation": "modify",
-          "description": "Implement conditional rendering logic to hide the Login button when the user is authenticated (!!identity is true) and show the existing logout/profile controls instead. Ensure smooth transitions between authentication states without layout shift. The existing authentication UI elements should remain unchanged and continue to function as before. Verify the component's usage instructions before implementing."
-        }
-      ]
-    }
-  ]
+  "title": "Redeploy application to production",
+  "requirements": []
 }

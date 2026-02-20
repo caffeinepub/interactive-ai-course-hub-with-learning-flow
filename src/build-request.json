@@ -1,78 +1,10 @@
 {
   "kind": "build_request",
-  "title": "Add login button to header for unauthenticated users",
-  "projectName": "AI Coach Voice",
-  "priority": "high",
-  "requirements": [
-    {
-      "id": "REQ-12",
-      "text": "Add a prominent 'Login' or 'Sign In' button to the Header component that appears in the top-right corner for unauthenticated users, positioned before the theme toggle button",
-      "target": "frontend",
-      "source": {
-        "messageIds": [
-          "msg-conversation-end"
-        ],
-        "quotes": [
-          "add a login button to the app's header/navigation",
-          "Appears in the top-right corner of the header for unauthenticated users"
-        ]
-      },
-      "acceptanceCriteria": [
-        "Login button is visible in the header when user is not authenticated",
-        "Button is positioned in the top-right area of the header navigation",
-        "Button has clear, prominent styling that matches the app's visual theme",
-        "Button is responsive and visible on mobile, tablet, and desktop screen sizes"
-      ]
-    },
-    {
-      "id": "REQ-13",
-      "text": "Connect the login button to trigger Internet Identity authentication using the existing useInternetIdentity hook's login function when clicked",
-      "target": "frontend",
-      "source": {
-        "messageIds": [
-          "msg-conversation-end"
-        ],
-        "quotes": [
-          "Triggers Internet Identity authentication when clicked"
-        ]
-      },
-      "acceptanceCriteria": [
-        "Clicking the login button initiates the Internet Identity authentication flow",
-        "Authentication uses the existing useInternetIdentity context and login method",
-        "Button shows loading state during authentication process"
-      ]
-    },
-    {
-      "id": "REQ-14",
-      "text": "Hide the login button and show the existing logout/profile controls in the Header component after successful authentication",
-      "target": "frontend",
-      "source": {
-        "messageIds": [
-          "msg-conversation-end"
-        ],
-        "quotes": [
-          "Replaces itself with user profile/logout controls after successful login"
-        ]
-      },
-      "acceptanceCriteria": [
-        "Login button is hidden when user is authenticated",
-        "Existing logout button and user controls remain visible for authenticated users",
-        "Transition between login and authenticated states is smooth"
-      ]
-    }
-  ],
-  "constraints": [
-    "Use the existing useInternetIdentity hook and authentication system",
-    "Do not modify frontend/src/hooks/useInternetIdentity.ts",
-    "Maintain the current Header component structure and existing navigation elements",
-    "Preserve the existing theme toggle and logout functionality"
-  ],
-  "nonGoals": [
-    "Creating new authentication providers or methods beyond Internet Identity",
-    "Modifying the authentication flow or identity management logic",
-    "Adding registration or signup flows separate from Internet Identity",
-    "Implementing social login buttons (Google, Facebook, etc.)"
-  ],
+  "title": "Redeploy application to production",
+  "priority": "normal",
+  "requirements": [],
+  "constraints": [],
+  "nonGoals": [],
   "imageRequirements": {
     "required": [],
     "edits": []
